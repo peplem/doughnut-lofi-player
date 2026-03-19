@@ -1,0 +1,263 @@
+/* Press Start 2P — pixel font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --accent: #e94560;
+  --text: #eaeaea;
+  --muted: #888;
+  --pixel-font: 'Press Start 2P', monospace;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--pixel-font);
+  font-size: 8px;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+/* ───────────── Full-page background gif ───────────── */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+/* ───────────── App root layout ───────────── */
+.app-root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ───────────── Logo ───────────── */
+.app-logo {
+  display: block;
+  width: clamp(256px, 30%, 512px);
+  height: auto;
+  align-self: center;
+  image-rendering: pixelated;
+}
+
+/* ───────────── GIF cycle button ───────────── */
+.bg-btn {
+  font-size: 7px !important;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.bg-btn:hover {
+  opacity: 1;
+}
+
+/* NES.css overrides to match our dark theme */
+.nes-container {
+  background: rgba(22, 33, 62, 0.82) !important;
+  color: var(--text) !important;
+  font-family: var(--pixel-font) !important;
+  backdrop-filter: blur(2px);
+}
+
+.nes-btn {
+  font-family: var(--pixel-font) !important;
+  font-size: 10px !important;
+}
+
+/* ───────────── Player shell ───────────── */
+.player-shell {
+  width: 100%;
+}
+
+.player-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+/* ───────────── Track info ───────────── */
+.track-info {
+  text-align: center;
+  line-height: 2;
+}
+
+.track-name {
+  font-size: 10px;
+  color: var(--text);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 340px;
+}
+
+.track-artist {
+  font-size: 7px;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+
+/* ───────────── Progress bar ───────────── */
+.progress-section {
+  width: 100%;
+}
+
+.progress-bar-track {
+  cursor: pointer;
+  width: 100%;
+}
+
+.progress-bar-track progress.nes-progress {
+  width: 100%;
+  height: 16px;
+}
+
+.time-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 7px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ───────────── Controls ───────────── */
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.transport {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.play-btn {
+  min-width: 56px;
+}
+
+.volume-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 80%;
+}
+
+.vol-icon {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.nes-range {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+/* ───────────── Track list ───────────── */
+.track-list {
+  margin-top: 8px;
+}
+
+.track-list .title {
+  font-size: 8px;
+}
+
+.track-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 2px;
+  cursor: pointer;
+  font-size: 7px;
+  color: var(--muted);
+  transition: color 0.1s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.track-item:hover {
+  color: var(--text);
+}
+
+.track-item.active {
+  color: var(--accent);
+}
+
+.track-cursor {
+  width: 10px;
+  flex-shrink: 0;
+}
+
+.track-num {
+  flex-shrink: 0;
+}
+
+.track-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-link {
+  font-size: 7px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.track-link:hover {
+  text-decoration: underline;
+}
+
+.track-link-sm {
+  flex-shrink: 0;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 8px;
+}
+
+.track-link-sm:hover {
+  text-decoration: underline;
+}
