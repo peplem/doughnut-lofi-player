@@ -17,11 +17,7 @@ export function Player() {
   } = usePlayer(tracks)
 
   return (
-    <>
-      {/* Hidden YouTube IFrame player container */}
-      <div id="yt-player" style={{ display: 'none' }} />
-
-      <div className="player-shell nes-container is-rounded">
+    <div className="player-shell nes-container is-rounded">
         <div className="player-body">
           <div className="track-info">
             <p className="track-name">{currentTrack.title}</p>
@@ -40,6 +36,5 @@ export function Player() {
 
         <TrackList tracks={tracks} currentIndex={trackIndex} onSelect={selectTrack} />
       </div>
-    </>
   )
 }

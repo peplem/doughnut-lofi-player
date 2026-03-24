@@ -67,7 +67,12 @@ body {
   image-rendering: pixelated;
 }
 
-/* ───────────── GIF cycle button ───────────── */
+/* ───────────── Top buttons row ───────────── */
+.top-btns {
+  display: flex;
+  gap: 8px;
+}
+
 .bg-btn {
   font-size: 7px !important;
   opacity: 0.8;
@@ -76,6 +81,52 @@ body {
 
 .bg-btn:hover {
   opacity: 1;
+}
+
+/* ───────────── Timer widget ───────────── */
+.timer-widget {
+  width: 100%;
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ───────────── About dialog ───────────── */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.dialog-box {
+  width: 100%;
+  max-width: 380px;
+}
+
+.dialog-body {
+  font-size: 9px;
+  line-height: 2.2;
+  margin: 0 0 16px;
+}
+
+.dialog-close {
+  display: block;
+  margin: 0 auto;
 }
 
 /* NES.css overrides to match our dark theme */
@@ -118,35 +169,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 340px;
-}
-
-.track-artist {
-  font-size: 7px;
-  color: var(--muted);
-  margin: 4px 0 0;
-}
-
-/* ───────────── Progress bar ───────────── */
-.progress-section {
-  width: 100%;
-}
-
-.progress-bar-track {
-  cursor: pointer;
-  width: 100%;
-}
-
-.progress-bar-track progress.nes-progress {
-  width: 100%;
-  height: 16px;
-}
-
-.time-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 7px;
-  color: var(--muted);
-  margin-top: 4px;
 }
 
 /* ───────────── Controls ───────────── */
